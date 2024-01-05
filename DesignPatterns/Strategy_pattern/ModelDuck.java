@@ -1,4 +1,4 @@
-package DesignPatterns.Strategy_pattern;
+package Strategy_pattern;
 
 public class ModelDuck extends Duck {
     public ModelDuck() {
