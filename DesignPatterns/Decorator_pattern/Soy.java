@@ -9,11 +9,11 @@ public class Soy extends CondamentDecorator {
 
     @Override
     public String getDescription() {
-        return this.getDescription() + ", Soy";
+        return beverage.getDescription() + ", Soy";
     }
 
     @Override
     public double cost() {
-        return this.cost() + .15;
+        return beverage.cost() + .15;
     }
 }
