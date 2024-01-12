@@ -1,4 +1,4 @@
-package headfirst.designpatterns.factory.pizzaaf;
+package FactoryPattern;
 
 public interface Cheese {
 	public String toString();

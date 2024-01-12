@@ -1,4 +1,4 @@
-package headfirst.designpatterns.factory.pizzaaf;
+package FactoryPattern;
 
 public class MozzarellaCheese implements Cheese {
 
