@@ -1,4 +1,4 @@
-package Observer_pattern;
+package ObserverPattern;
 import java.util.ArrayList;
 
 public class WeatherData implements Subject{

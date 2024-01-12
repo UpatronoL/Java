@@ -1,4 +1,4 @@
-package Strategy_pattern;
+package StrategypPattern;
 
 public class MiniDuckSimulator {
     public static void main(String[] args) {

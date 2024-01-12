@@ -1,4 +1,4 @@
-package Observer_pattern;
+package ObserverPattern;
 
 public class CurrentConditionsDisplay implements Observer, DisplayElement{
     private float temperature;
