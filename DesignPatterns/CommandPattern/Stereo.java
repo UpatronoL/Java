@@ -27,4 +27,8 @@ public class Stereo {
         System.out.println(location + " stereo is set for Radio input");
     }
 
+    public void setVolume(int volume) {
+        System.out.println(location + " stereo volume set to " + volume);
+    }
+
 }
