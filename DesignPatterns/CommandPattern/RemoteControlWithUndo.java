@@ -1,10 +1,11 @@
 package CommandPattern;
 
-public class RemoteControl {
+public class RemoteControlWithUndo {
     Command[] onCommands;
     Command[] offCommands;
+    Command undoCommand;
 
-    public RemoteControl() {
+    public RemoteControlWithUndo() {
         onCommands = new Command[7];
         offCommands = new Command[7];
 
@@ -13,6 +14,7 @@ public class RemoteControl {
             onCommands[i] = noCommand;
             offCommands[i] = noCommand;
         }
+        undoCommand = noCommand;
     }
 
     public void setCommand(int slot, Command onCommand, Command offCommand) {
@@ -21,18 +23,30 @@ public class RemoteControl {
     }
 
     void onButtonWasPushed(int slot) {
-        if(onCommands[slot] != null) onCommands[slot].execute();
+        if (onCommands[slot] != null) {
+            onCommands[slot].execute();
+            undoCommand = offCommands[slot];
+        }
     }
 
     void offButtonWasPushed(int slot) {
-        if (offCommands[slot] != null) offCommands[slot].execute();
+        if (offCommands[slot] != null) {
+            offCommands[slot].execute();
+            undoCommand = onCommands[slot];
+        }
+    }
+
+    public void undoCommandWasPushed() {
+        if(undoCommand != null)
+            undoCommand.undo();
     }
 
     public String toString() {
         StringBuffer stringBuff = new StringBuffer();
         stringBuff.append("\n------ Remote Control ------\n");
-        for(int i = 0; i < onCommands.length; i++) {
-            stringBuff.append("[slot " + i + "] " + onCommands[i].getClass().getName() + "    " + offCommands[i].getClass().getName() + " \n");
+        for (int i = 0; i < onCommands.length; i++) {
+            stringBuff.append("[slot " + i + "] " + onCommands[i].getClass().getName() + "    "
+                    + offCommands[i].getClass().getName() + " \n");
         }
 
         return stringBuff.toString();

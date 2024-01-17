@@ -11,4 +11,9 @@ public class GarageLightOnCommand implements Command {
     public void execute() {
         garage.garageLightOn();
     }
+
+    @Override
+    public void undo() {
+        garage.garageLightOff();
+    }
 }

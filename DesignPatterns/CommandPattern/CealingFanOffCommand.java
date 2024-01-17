@@ -11,4 +11,9 @@ public class CealingFanOffCommand implements Command {
     public void execute() {
         cealingFan.off();
     }
+
+    @Override
+    public void undo() {
+        cealingFan.high();
+    }
 }

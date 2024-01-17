@@ -11,4 +11,9 @@ public class GarageDoorOpenCommand implements Command {
     public void execute() {
         door.Open();
     }
+
+    @Override
+    public void undo() {
+        door.Close();
+    }
 }
