@@ -11,6 +11,7 @@ public class RemoteLoader {
 
         remoteControlWithUndo.setCommand(0, livingRoomLightOnCommand, livingRoomLightOffCommand);
 
+        System.out.println(remoteControlWithUndo);
         remoteControlWithUndo.onButtonWasPushed(0);
         remoteControlWithUndo.offButtonWasPushed(0);
         System.out.println(remoteControlWithUndo);

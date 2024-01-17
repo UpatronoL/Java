@@ -8,7 +8,7 @@ public class Light {
    }
 
    public void on() {
-      System.out.println(loaction + " + light is on");
+      System.out.println(loaction + " light is on");
    }
 
    public void off() {

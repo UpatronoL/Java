@@ -25,14 +25,14 @@ public class RemoteControlWithUndo {
     void onButtonWasPushed(int slot) {
         if (onCommands[slot] != null) {
             onCommands[slot].execute();
-            undoCommand = offCommands[slot];
+            undoCommand = onCommands[slot];
         }
     }
 
     void offButtonWasPushed(int slot) {
         if (offCommands[slot] != null) {
             offCommands[slot].execute();
-            undoCommand = onCommands[slot];
+            undoCommand = offCommands[slot];
         }
     }
 
