@@ -4,22 +4,17 @@ public class RemoteLoader {
     public static void main(String[] args) {
         RemoteControlWithUndo remoteControlWithUndo = new RemoteControlWithUndo();
 
-        Light livingRoomLight = new Light("Living room");
-        
-        LightOnCommand livingRoomLightOnCommand = new LightOnCommand(livingRoomLight);
-        LightOffCommand livingRoomLightOffCommand = new LightOffCommand(livingRoomLight);
+        CealingFan cealingFan = new CealingFan("Living room");
 
-        remoteControlWithUndo.setCommand(0, livingRoomLightOnCommand, livingRoomLightOffCommand);
+        CealingFanLowCommand cealingFanLowCommand = new CealingFanLowCommand(cealingFan);
+        CealingFanOffCommand cealingFanOffCommand = new CealingFanOffCommand(cealingFan);
+
+        remoteControlWithUndo.setCommand(0, cealingFanLowCommand, cealingFanOffCommand);
 
         System.out.println(remoteControlWithUndo);
         remoteControlWithUndo.onButtonWasPushed(0);
         remoteControlWithUndo.offButtonWasPushed(0);
-        System.out.println(remoteControlWithUndo);
-        remoteControlWithUndo.undoCommandWasPushed();
-        remoteControlWithUndo.offButtonWasPushed(0);
-        remoteControlWithUndo.onButtonWasPushed(0);
         System.out.println(remoteControlWithUndo);
         remoteControlWithUndo.undoCommandWasPushed();
     }
-        
 }
