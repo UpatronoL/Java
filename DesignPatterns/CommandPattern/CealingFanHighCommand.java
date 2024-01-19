@@ -1,17 +1,17 @@
 package CommandPattern;
 
-public class CealingFanOffCommand implements Command {
+public class CealingFanHighCommand implements Command {
     CealingFan cealingFan;
     int prevSpeed;
 
-    public CealingFanOffCommand(CealingFan ceal) {
+    public CealingFanHighCommand(CealingFan ceal) {
         this.cealingFan = ceal;
     }
 
     @Override
     public void execute() {
         prevSpeed = cealingFan.speed;
-        cealingFan.off();
+        cealingFan.medium();
     }
 
     @Override
