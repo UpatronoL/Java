@@ -36,5 +36,4 @@ public class CealingFan {
     public void getSpeed() {
         System.out.println(location + " cealing fun speed is " + speed);
     }
-
 }
